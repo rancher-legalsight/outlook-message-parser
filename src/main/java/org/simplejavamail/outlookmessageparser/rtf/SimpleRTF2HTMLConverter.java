@@ -14,7 +14,7 @@ import static org.simplejavamail.outlookmessageparser.rtf.util.CharsetHelper.WIN
  */
 public class SimpleRTF2HTMLConverter implements RTF2HTMLConverter {
 
-	private static final String[] HTML_START_TAGS = { "<html ", "<Html ", "<HTML " };
+	private static final String[] HTML_START_TAGS = { "<html", "<Html", "<HTML" };
 	private static final String[] HTML_END_TAGS = { "</html>", "</Html>", "</HTML>" };
 	
 	public String rtf2html(final String rtf) {
@@ -115,7 +115,7 @@ public class SimpleRTF2HTMLConverter implements RTF2HTMLConverter {
 			//embed code within html tags
 			String html = "<html><body style=\"font-family:'Courier',monospace;font-size:10pt;\">" + text + "</body></html>";
 			//replace linebreaks with html breaks
-			html = html.replaceAll("[\\n\\r]+", " <br/> ");
+			html = html.replaceAll("[\\n\\r]+", " ");
 			//create hyperlinks
 			html = html.replaceAll("(http://\\S+)", "<a href=\"$1\">$1</a>");
 			return html.replaceAll("mailto:(\\S+@\\S+)", "<a href=\"mailto:$1\">$1</a>");
